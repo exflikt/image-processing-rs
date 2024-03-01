@@ -1,0 +1,15 @@
+set terminal pngcairo enhanced color lw 1.0 font 'Times Roman'
+
+set title 'SSD'
+set xlabel 'x'
+set ylabel 'y'
+set dgrid3d 512,512
+
+set output 'tmp-ssd.png'
+set xrange [0:512]
+set yrange [0:512]
+set zrange [0:36000000]
+
+set datafile separator ','
+#splot 'tmp_64x64+224+224.csv' using 1:2:3 title '' with lines
+splot 'tmp_ssd.csv' using 1:2:3 title '' with lines
